@@ -21,7 +21,7 @@ install_requirements:
 # ----------------------------------
 
 streamlit:
-	-@streamlit run upload.py
+	-@streamlit run app.py
 
 streamlit_test:
 	-@streamlit run test.py
