@@ -28,11 +28,11 @@ if upload is not None:
     else:
         st.session_state.upload = upload.read()
 
-        st.switch_page("/pages/crop.py")
+        st.switch_page("pages/crop.py")
 
 if cam is not None:
     if cam.size > MAX_FILE_SIZE:
         st.error("The uploaded file is too large. Please upload an image smaller than 5MB.")
     else:
         st.session_state.upload = cam.read()
-        st.switch_page("/pages/crop.py")
+        st.switch_page("pages/crop.py")

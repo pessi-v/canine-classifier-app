@@ -34,7 +34,7 @@ try:
     resp = requests.post(url, files=files, timeout=10000)
     data = resp.json()
     holder_img.empty()
-    results_rows[0].subheader("Your dogs most likely breeds are:")
+    results_rows[0].subheader("Your dog's most likely breeds are:")
 
     with results_rows[1]:
         st.write("")
@@ -42,8 +42,8 @@ try:
         vision_row = st.columns(2)
         vision_row[0].write("What you see:")
         vision_row[0].image(st.session_state.cropped_pic, use_column_width=True)
-        vision_row[1].write(" What can the 💻🧠 sees:")
-        vision_row[1].image(f"{st.secrets['CANINE_API_URL']}/{data[0]['gradcam']}" ,use_column_width=True)
+        vision_row[1].write("What the 💻🧠 sees:")
+        vision_row[1].image(f"{st.secrets['CANINE_API_URL']}{data[0]['gradcam']}" ,use_column_width=True)
 
 
     st.session_state.complete = True
