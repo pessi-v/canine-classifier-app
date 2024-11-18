@@ -14,7 +14,7 @@ st.session_state.complete = False
 
 
 # layout container for header
-column_1, column_2 = st.columns(2)
+column_1, column_2 = st.columns(2, vertical_alignment="center")
 
 with column_1:
     st.title("Canine Classifier")
