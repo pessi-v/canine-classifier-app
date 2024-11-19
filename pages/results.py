@@ -29,7 +29,7 @@ left_column, center_column, last_column = st.columns(3)
 with center_column:
   holder_img = st.image(
     "images/searching.gif",
-    caption="Inference might take a while, if the API server is yet running. Hold on",
+    caption="Inference might take a while, if the API server is not yet running. Hold on",
   )
 
 

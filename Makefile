@@ -23,6 +23,9 @@ install_requirements:
 streamlit:
 	-@streamlit run app.py
 
+streamlit-dev:
+	-@streamlit run app.py --server.port=8501
+
 streamlit_test:
 	-@streamlit run test.py
 
