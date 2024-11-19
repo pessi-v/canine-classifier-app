@@ -1,4 +1,5 @@
 streamlit==1.40.1
 streamlit_cropperjs
+streamlit-cropper
 requests
 qrcode
