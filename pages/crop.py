@@ -18,7 +18,6 @@ st.title("Canine Classifier")
 
 
 def select_borders(uploaded_file):
-    st.write("Draw borders around your dog")
     cropped_pic = st_cropperjs(
         pic=uploaded_file, btn_text="Identify dog", key="cropper"
     )
@@ -27,8 +26,6 @@ def select_borders(uploaded_file):
         st.switch_page("pages/results.py")
 
 def select_borders_2(uploaded_file):
-    # breakpoint()
-    # img = Image.open(uploaded_file)
     img = Image.open(io.BytesIO(uploaded_file))
     cropped_img = st_cropper(
         img,
@@ -39,12 +36,11 @@ def select_borders_2(uploaded_file):
     _ = cropped_img.thumbnail((150,150))
     st.image(cropped_img)
     st.session_state.cropped_pic = cropped_img
-    if st.button("Identify", use_container_width=True):
+    if st.button("Identify dog", use_container_width=False):
         st.switch_page("pages/results.py")
-    # st.page_link("pages/results.py", label="Identify")
 
 try:
-    # select_borders(st.session_state.uploaded_file)
+    st.write("Draw borders around your dog")
     select_borders_2(st.session_state.uploaded_file)
 except Exception as e:
     print(e)
