@@ -35,13 +35,16 @@ def select_borders_2(uploaded_file):
     st.write("Preview")
     _ = cropped_img.thumbnail((150,150))
     st.image(cropped_img)
-    st.session_state.cropped_pic = cropped_img
     if st.button("Identify dog", use_container_width=False):
+        buf = io.BytesIO()
+        cropped_img.save(buf, format='JPEG')
+        st.session_state.cropped_pic = buf.getvalue()
         st.switch_page("pages/results.py")
 
 try:
     st.write("Draw borders around your dog")
     select_borders_2(st.session_state.uploaded_file)
+    # select_borders(st.session_state.uploaded_file)
 except Exception as e:
     print(e)
     st.switch_page("app.py")
