@@ -128,7 +128,7 @@ for index, breed in enumerate(model_data):
   # Model doesn't identify a dog
   if breed['referenceImageId'] == None and breed['breedNames'] == "It doesn't look like a dog!":
     with results_column_1.expander(f"{breed['breedNames']}", expanded=True):
-      st.image('images/snoopy.jpg')
+      st.image('images/catdog.png')
 
   # Identified breeds
   if breed['referenceImageId']:
@@ -138,7 +138,7 @@ for index, breed in enumerate(model_data):
       show_enriched_results(the_dog_api_data)
 
   # there is no known reference image id for The Dog Api, so we ask api-ninjas for details with breed name
-  if breed['referenceImageId'] == None and breed['breedNames'] != 'Others':
+  if breed['referenceImageId'] == None and breed['breedNames'] != 'Others' and breed['breedNames'] != "It doesn't look like a dog!":
     api_ninjas_data = get_api_ninjas_data(breed)
     if api_ninjas_data:
       is_only_result = index == 0 
