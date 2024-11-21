@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 
 st.set_page_config(
-    page_title="Canine Classifier 🐶",
+    page_title="Canine Classifier",
     page_icon="🐶",
     layout="centered",
     initial_sidebar_state="collapsed"
@@ -77,7 +77,7 @@ if 'cropped_pic' not in st.session_state:
 # layout container for header
 column_1, column_2 = st.columns(2, vertical_alignment="center")
 with column_1:
-  st.title("Canine Classifier 🐶")
+  st.title("Canine Classifier")
 with column_2:
   if st.button("Identify another dog 🐕", use_container_width=True):
     st.switch_page("app.py")
@@ -144,7 +144,3 @@ for index, breed in enumerate(model_data):
       is_only_result = index == 0 
       with results_column_1.expander(f"{breed['prob']}% {breed['breedNames']}", expanded = is_only_result):
         show_api_ninjas_results(api_ninjas_data)
-
-
-if st.button("🐕 Start over"):
-    st.switch_page("app.py")

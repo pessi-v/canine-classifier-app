@@ -28,6 +28,14 @@ with column_1:
 with column_2:
     st.image("images/orange_doggo.png", use_container_width=True)
 
+# explainer box
+explainer = st.container(border=True)
+with explainer:
+    st.write("""This app uses an EfficientNet V2s, a type of Vision Transformer Machine Learning model,
+    to output probabilities of a type of dog breed in any given image. You can upload a photo of your dog,
+    or take a webcam shot of yourself to see if the algorithm thinks it 'sees' a poodle, a schnautzer, or a labby.
+    You can find the code for the project at https://github.com/pessi-v/canine-classifier-app""")
+
 
 
 if uploaded_file is not None:
